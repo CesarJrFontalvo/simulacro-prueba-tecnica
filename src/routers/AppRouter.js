@@ -13,6 +13,7 @@ export const AppRouter = () => {
           <Router>
             <Navbar/>
                 <Routes>
+                    <Route exact path="/" element={<Form/>}/>
                     <Route exact path="/Registro" element={<Form/>}/>
                     <Route exact path="/Listar" element={<List/>}/>
                 </Routes>
