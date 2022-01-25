@@ -7,16 +7,15 @@ import '../styles/Form.css';
 export const Form = () => {
 
     const [estudiante, setEstudiante] = useState({
-        nombre: '',
-        tipo: '',
-        numero: '',
-        telefono: '',
-        celular: '',
-        direccion: '',
-        imagen: ''
+        nombreEquipo: '',
+        nombreJugador: '',
+        piernaHabil: '',
+        nacionalidad: '',
+        edad: '',
+        foto: ''
     })
 
-    const {nombre,tipo,numero,telefono,celular,direccion,imagen} = estudiante;
+    const {nombreEquipo,nombreJugador,piernaHabil,nacionalidad,edad,foto} = estudiante;
 
     const postData = () => {
          axios.post(url,estudiante)
@@ -41,7 +40,7 @@ export const Form = () => {
         const file = e.target.files[0];
          fileUpload(file)
         .then(response => {
-            estudiante.imagen = response;
+            estudiante.foto = response;
         }).catch(error => {
             console.log(error.message)
         }) 
@@ -50,13 +49,13 @@ export const Form = () => {
     return (
         <div>
            <form id="formulario" onSubmit={handleSubmit}>
-           <h2>Registro de Estudiantes</h2>
+           <h2>Registro de Jugadores</h2>
            <hr/>
                <div>
-                   <label>Nombre Completo</label>
-                   <input id="inputNombre" name="nombre" value={nombre} onChange={handleChanged}/>
+                   <label>Nombre Equipo</label>
+                   <input id="inputNombre" name="nombreEquipo" value={nombreEquipo} onChange={handleChanged}/>
                </div>
-               <div>
+               {/* <div>
                    <label>Tipo Documento</label>
                    <select id="selectTipo" name="tipo" value={tipo} onChange={handleChanged}>
                        <option name="Seleccionar" value="Seleccionar">Seleccionar</option>
@@ -64,26 +63,27 @@ export const Form = () => {
                        <option name="T.I" value="T.I">T.I</option>
                        <option name="C.E" value="C.E">C.E</option>
                    </select>
+               </div> */}
+              
+              <div>
+                   <label>Nombre Jugador</label>
+                   <input id="inputNombre" name="nombreJugador" value={nombreJugador} onChange={handleChanged}/>
                </div>
                <div>
-                   <label>Número Documento</label>
-                   <input id="inputNumero" type="number" name="numero" value={numero} onChange={handleChanged}/>
+                   <label>Pierna Habil</label>
+                   <input id="inputPierna" name="piernaHabil" value={piernaHabil} onChange={handleChanged}/>
                </div>
                <div>
-                   <label>Teléfono</label>
-                   <input id="inputTelefono" type="number" name="telefono" value={telefono} onChange={handleChanged}/>
+                   <label>Nacionalidad</label>
+                   <input id="inputNacionalidad" name="nacionalidad" value={nacionalidad} onChange={handleChanged}/>
                </div>
                <div>
-                   <label>Celular</label>
-                   <input id="inputCelular" type="number" name="celular" value={celular} onChange={handleChanged}/>
+                   <label>Edad</label>
+                   <input id="inputEdad" type="number"  name="edad" value={edad} onChange={handleChanged}/>
                </div>
                <div>
-                   <label>Dirección</label>
-                   <input id="inputDireccion" name="direccion" value={direccion} onChange={handleChanged}/>
-               </div>
-               <div>
-                   <label>Imagen</label>
-                   <input id="botonImagen" type="file" name="imagen" value={imagen}    onChange={handleFileChange}/>
+                   <label>foto</label>
+                   <input id="botonFoto" type="file" name="foto" value={foto}  onChange={handleFileChange}/>
                     
                </div>
                <div>

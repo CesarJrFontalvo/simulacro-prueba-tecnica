@@ -38,14 +38,12 @@ export const List = () => {
             <table className="tabla">
                 <thead>
                     <tr>
-                    <th>Nombre Completo</th>
-                    <th>Tipo Documento</th>
-                    <th>Número Documento</th>
-                    <th>Teléfono</th>
-                    <th>Celular</th>
-                    <th>Dirección</th>
-                    <th>Imagen</th>
-                    <th>Acción</th>
+                    <th>Nombre del Equipo</th>
+                    <th>Nombre del Jugador</th>
+                    <th>Pierna Habil</th>
+                    <th>Nacionalidad</th>
+                    <th>Edad</th>
+                    <th>Foto</th>
                     </tr>
                 </thead>
                 
@@ -54,13 +52,12 @@ export const List = () => {
                      {
                          registro.map(objeto => (
                              <tr key={objeto.id}>
-                                 <td>{objeto.nombre}</td>
-                                 <td>{objeto.tipo}</td>
-                                 <td>{objeto.numero}</td>
-                                 <td>{objeto.telefono}</td>
-                                 <td>{objeto.celular}</td>
-                                 <td>{objeto.direccion}</td>
-                                 <td><img src={objeto.imagen} width="40" height="50" alt=""/></td>
+                                 <td>{objeto.nombreEquipo}</td>
+                                 <td>{objeto.nombreJugador}</td>
+                                 <td>{objeto.piernaHabil}</td>
+                                 <td>{objeto.nacionalidad}</td>
+                                 <td>{objeto.edad}</td>
+                                 <td><img src={objeto.foto} width="40" height="50" alt=""/></td>
                                  <td><button onClick={() => deleteData(objeto.id)}>Eliminar</button></td>
                             </tr>
                          ))

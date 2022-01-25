@@ -1,1 +1,1 @@
-export const url ="https://registro-prueba-tecnica.herokuapp.com/registro";
+export const url ="https://registro-prueba-tecnica.herokuapp.com/registro/";
