@@ -48,10 +48,10 @@ export const Form = () => {
 
     return (
         <div>
-           <form id="formulario" onSubmit={handleSubmit}>
+           <form id="formulario" class="formulario" onSubmit={handleSubmit}>
            <h2>Registro de Jugadores</h2>
            <hr/>
-               <div>
+               <div class="input-info">
                    <label>Nombre Equipo</label>
                    <input id="inputNombre" name="nombreEquipo" value={nombreEquipo} onChange={handleChanged}/>
                </div>
@@ -65,28 +65,28 @@ export const Form = () => {
                    </select>
                </div> */}
               
-              <div>
+              <div class="input-info">
                    <label>Nombre Jugador</label>
                    <input id="inputNombre" name="nombreJugador" value={nombreJugador} onChange={handleChanged}/>
                </div>
-               <div>
+               <div class="input-info">
                    <label>Pierna Habil</label>
                    <input id="inputPierna" name="piernaHabil" value={piernaHabil} onChange={handleChanged}/>
                </div>
-               <div>
+               <div class="input-info">
                    <label>Nacionalidad</label>
                    <input id="inputNacionalidad" name="nacionalidad" value={nacionalidad} onChange={handleChanged}/>
                </div>
-               <div>
+               <div class="input-info">
                    <label>Edad</label>
                    <input id="inputEdad" type="number"  name="edad" value={edad} onChange={handleChanged}/>
                </div>
-               <div>
+               <div class="input-info">
                    <label>foto</label>
                    <input id="botonFoto" type="file" name="foto" value={foto}  onChange={handleFileChange}/>
                     
-               </div>
-               <div>
+               </div >
+               <div >
                    <button onClick={() => postData()} id="btnRegistro">Enviar</button> 
                </div>
            </form>
