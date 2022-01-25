@@ -1,0 +1,1 @@
+export const url ="https://registro-prueba-tecnica.herokuapp.com/registro";
